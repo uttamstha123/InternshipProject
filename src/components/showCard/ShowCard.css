@@ -1,0 +1,43 @@
+.showCard {
+  position: relative;
+}
+.showCard__image {
+  transition: all 0.2s;
+}
+.showCard__title:hover a {
+  text-decoration: underline;
+}
+.showCard:hover .showCard__image {
+  opacity: 0.6;
+}
+.showCard:hover .showCard__playBtn {
+  display: block;
+}
+.showCard__playBtn {
+  transition: all 0.2s;
+  display: none;
+  font-size: 4rem;
+  color: yellow;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.showCard__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+.showCard__title a {
+  flex-grow: 1;
+}
+.showCard__title p {
+  color: #6e6d6d;
+}
+.showCard__title span {
+  font-size: 1rem;
+  margin-right: 0.2rem;
+}

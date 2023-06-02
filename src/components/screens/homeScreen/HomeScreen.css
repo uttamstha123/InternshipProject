@@ -1,0 +1,12 @@
+.homeScreen__header {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+.homeScreen__shows {
+  padding: 0 4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}

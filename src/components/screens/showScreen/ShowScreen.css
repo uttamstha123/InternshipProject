@@ -1,0 +1,24 @@
+.showScreen {
+  display: flex;
+  margin-top: 5rem;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+.showScreen__image {
+  max-width: 100%;
+}
+.showScreen__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.showScreen__details h1 {
+  font-size: 2rem;
+}
+.showScreen__details h2 {
+  font-size: 1.2rem;
+}
+.showScreen__details h3 {
+  font-size: .75rem;
+  color: #232323;
+}

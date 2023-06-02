@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomeScreen from "./components/screens/homeScreen/HomeScreen";
+import ShowScreen from "./components/screens/showScreen/ShowScreen";
+import axios from "axios";
 
 function App() {
+  const [shows, setShows] = useState([]);
+
+  useEffect(() => {
+    const fetchShows = async () => {
+      try {
+        const { data } = await axios.get(
+          "https://api.tvmaze.com/search/shows?q=all"
+        );
+        setShows(data);
+      } catch (error) {
+        console.error("Error fetching shows: ", error);
+      }
+    };
+
+    fetchShows();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<HomeScreen shows={shows} />} />
+        <Route path="/shows/:id" element={<ShowScreen shows={shows} />} />
+      </Routes>
+    </Router>
   );
 }
 
